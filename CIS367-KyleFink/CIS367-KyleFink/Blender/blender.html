@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Kyle Fink - CIS367 Project Webpage</title>
+        <link rel="stylesheet" href="../../../CIS367-WebsiteCSS.css">
+        
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">CIS367 Project Webpage</a>
+            <ul>
+                <li><a href="../../../index.html" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#work">Work</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="../../../Images/stars.png" id="stars">
+            <img src="../../../Images/sun.png" id="sun">
+            <img src="../../../Images/mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Blender</h2>
+            <a href="../../../index.html" id="btn">Home</a>
+            <img src="../../../Images/mountains_front.png" id="mountains_front">
+        </section>
+
+
+
+
+
+        <div class="work" id="work">
+            <h2>Buttons</h2>
+            <a href="#"><button type="button">Buttons</button></a>
+	</div>
+
+
+
+
+        <div class="sec" id="sec">
+            <h2>Blender Animations</h2>
+            <a class="fluid" id="fluid" height="300px"><img src="../../../Images/fluid sim.gif" alt="Everything is Fine"></a>
+            <a class="fish_tank" id="fish_tank" height="300px"><img src="../../../Images/Fish Tank Scene0001-0400(1).gif" alt="Everything is Fine"></a>
+            <a class="memes" id="memes" max-width="300px" height="auto" display="block"><img src="../../../Images/Everything Is Fine0001-0250.gif" alt="Everything is Fine"></a>
+        </div>
+
+        <script>
+            let stars = document.getElementById('stars');
+            let sun = document.getElementById('sun');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                sun.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.5 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+        </script>
+    </body>
+</html>

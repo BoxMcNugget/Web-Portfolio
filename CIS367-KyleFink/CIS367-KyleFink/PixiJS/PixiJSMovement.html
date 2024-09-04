@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://pixijs.download/release/pixi.min.js"></script>
+  </head>
+  <body>
+    <script type="module">
+      // Create the application helper and add its render target to the page
+      const app = new PIXI.Application();
+      await app.init({ width: 640, height: 360,backgroundColor: 0x8888ff })
+      document.body.appendChild(app.canvas);
+
+      const viewportWidth = app.screen.width;
+      const viewportHeight = app.screen.height; 
+
+      // Create the sprite and add it to the stage
+      await PIXI.Assets.load('monkey 1.png');
+      let sprite = PIXI.Sprite.from('monkey 1.png');
+      sprite.anchor.set(0.5);
+      sprite.position.set(viewportWidth / 2, viewportHeight / 2);
+      app.stage.addChild(sprite);
+
+      //app.ticker.add(gameloop);
+
+      window.addEventListener("keydown",keysdown);
+      window.addEventListener("keyup",keysup);
+
+      function keysdown(event){
+        if (event.key === "ArrowRight") {
+          if ( sprite.x < viewportWidth - sprite.width /2)
+            sprite.x += 10;
+        }
+        if (event.key === "ArrowDown") {
+          if (sprite.y < viewportHeight - sprite.height / 2)            sprite.y += 10;
+        }
+        if (event.key === "ArrowLeft") {
+          if (sprite.x > sprite.width / 2)
+            sprite.x -= 10;
+        }
+        if (event.key === "ArrowUp") {
+          if (sprite.y > sprite.height / 2)
+            sprite.y -= 10;
+        }
+      }
+
+
+
+
+
+      /*function keysup(e){
+        if (event.key === "ArrowRight") {
+            sprite.x -= 10;
+        }
+        if (event.key === "ArrowDown") {
+            sprite.y -= 10;
+        }
+        if (event.key === "ArrowLeft") {
+            sprite.x += 10;
+        }
+        if (event.key === "ArrowUp") {
+            sprite.y += 10;
+        }
+      }*/
+    </script>
+  </body>
+</html>
