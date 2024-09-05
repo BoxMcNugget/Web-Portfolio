@@ -82,21 +82,23 @@ section img{
     pointer-events: none;
 }
 section img#sun{
-    mix-blend-mode: screen;
+    mix-blend-mode:hard-light;
     justify-content: center;
     align-content: center;
+    width: fit-content;
+    transform: translateX(500px) translateY(200px);
+
 }
 section img#mountains_front{
     z-index: 10;
 }
 #text{
     position: absolute;
-    right: -250px;
     color: #fff;
     white-space: nowrap;
     font-size: 7.5vw;
     z-index: 9;
-    padding-bottom: 200px;
+    padding-bottom: 400px;
 }
 #btn{
     text-decoration: none;
