@@ -7,16 +7,18 @@
         
     </head>
     <body>
+        <!-- Adding sections and buttons to header -->
         <header>
             <a href="#" class="logo">Kyle Fink's Webpage</a>
             <ul>
-                <li><a href="#" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#WExp"> Work Experience</a></li>
                 <li><a href="#CExp">Coding Experience</a></li>
                 <li><a href="#work">Work</a></li>
             </ul>
         </header>
+
+        <!-- Importing images for initial impression -->
         <section>
             <img src="Images/stars.png" id="stars">
             <img src="Images/sun.png" id="sun">
@@ -26,8 +28,7 @@
             <img src="Images/mountains_front.png" id="mountains_front">
         </section>
 
-
-
+        <!-- Start of the "about me" section -->
         <div class="sec" id="about">
             <h1>About Me</h1>
             <h2>Introduction</h2>
@@ -45,6 +46,7 @@
             </p>
         </div>
 
+        <!-- Start of "Job Experience" section -->
         <div class="sec" id="WExp">
             <h1>Job Experience</h1>
                 <h3>GE Aerospace - Muskegon</h3>
@@ -58,6 +60,7 @@
                     
         </div>
 
+        <!-- Start of "Coding Experience" section -->
         <div class="sec" id="CExp">
             <h1>Coding Experience</h1>
             <h3>Introduction</h3>
@@ -121,6 +124,7 @@
             <br><br>
         </div>
 
+        <!-- Links for class work -->
         <div class="work" id="work">
             <h2>Class Work</h2>
             <a href="CIS367-KyleFink/CIS367-KyleFink/Triangle/demo/Triangle.html"><button type="work_btn">Triangle</button></a>
@@ -135,31 +139,10 @@
             <a href="CIS367-KyleFink/CIS367-KyleFink/Blender/blender.html" id="work_btn">Explore My Blender Projects</a>
 
 	</div>
-
+    <!-- link to js file -->
+    <script src="Website.js"></script>
         <footer class="sec" id="sec" height="200px">
 
         </footer>
-
-        <script>
-            let stars = document.getElementById('stars');
-            let sun = document.getElementById('sun');
-            let mountains_behind = document.getElementById('mountains_behind');
-            let text = document.getElementById('text');
-            let btn = document.getElementById('btn');
-            let mountains_front = document.getElementById('mountains_front');
-            let header = document.querySelector('header');
-
-            window.addEventListener('scroll', function(){
-                let value = window.scrollY;
-                stars.style.left = value * 0.25 + 'px';
-                sun.style.top = value * 1.5 + 'px';
-                mountains_behind.style.top = value * 0.5 + 'px';
-                mountains_front.style.top = value * 0 + 'px';
-                //text.style.marginRight = value * 1.5 + 'px';
-                text.style.marginTop = value * 3.0 + 'px';
-                btn.style.marginTop = value * 1.5 + 'px';
-                header.style.top = value * 0.5 + 'px';
-            })
-        </script>
     </body>
 </html>
