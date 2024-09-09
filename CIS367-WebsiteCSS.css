@@ -17,12 +17,16 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px 100px;
+    height: auto;    
+    padding: 8px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 10000;
     background-color: #1c0522;
+    border:mediumpurple;
+    border-style:ridge;
+    opacity: 95%;
 }
 header .logo{
     color: #fff;
