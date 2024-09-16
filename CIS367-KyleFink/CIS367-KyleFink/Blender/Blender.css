@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
+  scroll-behavior: smooth;
 }
 body{
     background-color: #1b1b1b;
@@ -121,6 +122,24 @@ nav .menu{
   color: black;
 }
 
+.ani{
+  padding: 50px;
+}
+
+.eif{
+    display: flex;
+}
+.eif p{
+  align-items:center;
+  align-content: center;
+  padding: 50px;
+  color: #fff;
+  font-size: 3em;
+  text-align: center;
+}
+.eif img{
+    float: right;
+}
 
 .room{
     display: flex;
@@ -151,6 +170,7 @@ nav .menu{
 .bowl-2{
     display: flex;
 }
+
 .bowl-2 p{
     align-items:center;
     align-content: center;
