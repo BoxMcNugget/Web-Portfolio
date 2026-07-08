@@ -1,4 +1,4 @@
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 .fa-2x {
 font-size: 2em;
@@ -114,17 +114,14 @@ padding:0;
 color:#fff;
 background-color:#000000;
 }
-.area {
-float: left;
-background: #e2e2e2;
-width: 100%;
-height: 100%;
+* {
+box-sizing: border-box;
 }
-@font-face {
-font-family: 'Titillium Web';
-font-style: normal;
-font-weight: 300;
-src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+body {
+margin: 0;
+background: linear-gradient(#2b1055, #7597de);
+min-height: 100vh;
+font-family: 'Titillium Web', sans-serif;
 }
 
 
@@ -141,21 +138,59 @@ src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes
 
 
 
-.grid-container {
+.content {
+    margin-left: 60px;
+    padding: 60px 40px;
+    color: #fff;
+}
+.content-header {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+.content-header h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+}
+.content-header p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+.card-grid {
     display: grid;
-    gap: 50px 100px;
-    color: red;
-    background-color: greenyellow;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
-.item1 {
-    grid-column-start: 1;
-    grid-column-end: 3;
+.card {
+    display: block;
+    background: #1c0522;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.item2 {
-    grid-column-start: 1;
-    grid-column-end: 3;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
-.item3 {
-    grid-column-start: 1;
-    grid-column-end: 3;
+.card .fa {
+    display: block;
+    width: auto;
+    margin-bottom: 15px;
+    color: mediumpurple;
+    text-align: left;
+}
+.card h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.card p {
+    font-size: 1em;
+    line-height: 1.5;
+    opacity: 0.85;
 }

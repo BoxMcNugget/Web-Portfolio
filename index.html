@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
-        <title>Kyle Fink's Webpage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kyle Fink | Portfolio</title>
+        <meta name="description" content="Kyle Fink — Computer Science student at Grand Valley State University. Portfolio of coding projects, Blender animations, and computer graphics work.">
+        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232b1055'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Kyle Fink | Portfolio">
+        <meta property="og:description" content="Computer Science student at Grand Valley State University. Coding projects, Blender animations, and computer graphics work.">
+        <meta property="og:url" content="https://boxmcnugget.github.io/Web-Portfolio/">
+        <meta property="og:image" content="https://boxmcnugget.github.io/Web-Portfolio/Images/IMG_6705.jpg">
         <link rel="stylesheet" href="CIS367-WebsiteCSS.css">
-        
     </head>
     <body>
-        <!-- Adding sections and buttons to header -->
+        <!-- Header: social links + section navigation -->
         <header>
             <ul class="example-2">
                 <li class="icon-content">
@@ -15,6 +23,8 @@
                     href="https://www.linkedin.com/in/kyle-j-fink/"
                     aria-label="LinkedIn"
                     data-social="linkedin"
+                    target="_blank"
+                    rel="noopener"
                   >
                     <div class="filled"></div>
                     <svg
@@ -35,7 +45,7 @@
                   <div class="tooltip">LinkedIn</div>
                 </li>
                 <li class="icon-content">
-                  <a href="https://github.com/BoxMcNugget" aria-label="GitHub" data-social="github">
+                  <a href="https://github.com/BoxMcNugget" aria-label="GitHub" data-social="github" target="_blank" rel="noopener">
                     <div class="filled"></div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -59,6 +69,8 @@
                     href="https://www.instagram.com/kyle_fink3/"
                     aria-label="Instagram"
                     data-social="instagram"
+                    target="_blank"
+                    rel="noopener"
                   >
                     <div class="filled"></div>
                     <svg
@@ -79,173 +91,243 @@
                   <div class="tooltip">Instagram</div>
                 </li>
                 <li class="icon-content">
-                  <a href="https://youtube.com/" aria-label="Youtube" data-social="youtube">
+                  <a href="mailto:kylefink3@gmail.com" aria-label="Email" data-social="email">
                     <div class="filled"></div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-youtube"
+                      class="bi bi-envelope"
                       viewBox="0 0 16 16"
                       xml:space="preserve"
                     >
                       <path
-                        d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
                         fill="currentColor"
                       ></path>
                     </svg>
                   </a>
-                  <div class="tooltip">Youtube</div>
+                  <div class="tooltip">Email</div>
                 </li>
               </ul>
-            
+
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#WExp"> Work Experience</a></li>
-                <li><a href="#CExp">Coding Experience</a></li>
-                <li><a href="#work">Work</a></li>
+                <li><a href="#WExp">Experience</a></li>
+                <li><a href="#CExp">Coding</a></li>
+                <li><a href="#work">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </header>
 
-        <!-- Importing images for initial impression -->
+        <!-- Landing hero: parallax layers driven by Website.js -->
         <section>
-            <img src="Images/stars.png" id="stars">
-            <img src="Images/sun.png" id="sun">
-            <img src="Images/mountains_behind.png" id="mountains_behind">
+            <img src="Images/stars.png" id="stars" alt="">
+            <img src="Images/sun.png" id="sun" alt="">
+            <img src="Images/mountains_behind.png" id="mountains_behind" alt="">
             <h2 id="text">Kyle Fink</h2>
             <a href="#about" id="btn">Explore</a>
-            <img src="Images/mountains_front.png" id="mountains_front">
+            <div class="shooting-stars" aria-hidden="true">
+                <span class="shooting-star"></span>
+                <span class="shooting-star"></span>
+                <span class="shooting-star"></span>
+            </div>
+            <img src="Images/mountains_front.png" id="mountains_front" alt="">
+            <div class="scroll-cue" aria-hidden="true"></div>
         </section>
 
-        <!-- Start of the "about me" section -->
-        <div class="sec" id="about">
+        <!-- About -->
+        <div class="sec reveal" id="about">
             <h1>About Me</h1>
-            <h2>Introduction</h2>
-            
             <p>
-                <img width="250px" justify-content="left" display="flex" src="Images/IMG_6705.jpg" id="Portrait">
-                
-                  
-                My name is Kyle Fink, welcome to my website! I'm a student at Grand Valley State University on my 5th year studying Computer Science.
-                I grew up in a small town called Bear Lake where we had very little opportunities growing up to experience things many others would have. 
-                In high school, I was part of the National Honor Society, the National Technical Honor Society, and Achieved my Eagle Scout through the 
-                Boy Scouts of America, troop 106, in 2019. I also participated in numerous years of sports for our highschool including Cross Country, Golf, 
-                Basketball, Football, and I was on the high school First Robotics team. I was very active in the community, doing volunteer things with the 
-                Boy Scouts like helping hand out waters and medals to runners after the annual Bay Shore Marathon in Traverse City. I also helped with 
-                selling tickets at ball games, helping run concession stands for ball games, and setting up/cleaning up after events at the school.
-                <br><br>
+                <img width="250" src="Images/IMG_6705.jpg" id="Portrait" alt="Portrait photo of Kyle Fink" loading="lazy">
+                My name is Kyle Fink &mdash; welcome to my site! I'm a fifth-year Computer Science student at
+                Grand Valley State University. I grew up in the small town of Bear Lake, Michigan, where
+                opportunities were limited, which taught me to make the most of every chance to learn and get involved.
+            </p>
+            <p>
+                In high school I was a member of the National Honor Society and the National Technical Honor Society,
+                and I earned my Eagle Scout rank through Boy Scouts of America, Troop 106, in 2019. I played several
+                sports &mdash; cross country, golf, basketball, and football &mdash; and competed on our FIRST Robotics
+                team. I stayed active in the community as well: handing out water and medals to runners at the annual
+                Bayshore Marathon in Traverse City, selling tickets and running concession stands at ball games, and
+                helping set up and clean up after school events.
             </p>
         </div>
 
-        <!-- Start of "Job Experience" section -->
-        <div class="sec" id="WExp">
-            <h1>Job Experience</h1>
-                <h3>GE Aerospace - Muskegon</h3>
-                    <p>
-                        I worked at GE Aerospace at the Muskegon plants during the 2024 summer as part of an internship opportunity. At GE I expanded my skills using SQL by 
-                        gaining real world experience using real data. I encountered SQL queries that I had never even heard of and had to adapt and learn how the new queries 
-                        worked. I learned how to use Oracle APEX for web development, I got experience talking to a customer and getting feedback from the customer to make 
-                        changes for the program I was developing. I also got some experience doing simple IT tasks like fixing computers, fixing desk phones, setting up printers,
-                        working with IDFs, and solving IT problems over the phone from a central IT Help Desk phone.
-                    </p>
-                    
+        <!-- Job Experience -->
+        <div class="sec reveal" id="WExp">
+            <h1>Experience</h1>
+            <div class="card-block">
+                <h3>GE Aerospace &mdash; Muskegon</h3>
+                <span class="meta">Software / IT Intern &middot; Summer 2024</span>
+                <p>
+                    I interned at GE Aerospace's Muskegon plants during the summer of 2024. There I sharpened my SQL
+                    skills on real production data, working through queries I had never encountered and learning how
+                    they behaved. I used Oracle APEX for web development, gathered feedback directly from a customer,
+                    and iterated on the program I was building based on their input. I also handled hands-on IT work
+                    &mdash; repairing computers and desk phones, setting up printers, working with IDFs, and resolving
+                    support tickets from a central IT help desk line.
+                </p>
+            </div>
         </div>
 
-        <!-- Start of "Coding Experience" section -->
-        <div class="sec" id="CExp">
+        <!-- Coding Experience -->
+        <div class="sec reveal" id="CExp">
             <h1>Coding Experience</h1>
-            <h3>Introduction</h3>
-                <p>
-                    C# was my first exposure to the world of coding. I took an intro to C# class at a small college called Northwestern Michigan College in Traverse City, 
-                    Michigan. There my professor John Velis really sold coding and made it fun, fun enough that I would later make Computer science my major. Pursuing 
-                    this degree has encouraged me to learn many other different languages to broaden my skills in the computer science field, some languages ive learned are
-                    obscure and not well known and others are extremely well known and documented. In this section im going to go more in depth into some of the more well known 
-                    languages ive gotten to know and how ive used them in classes.
-                </p>
-            <h3>C#</h3>
-                <p>
-                    My first ever class was in the language of C#. While learning C# I made larger and larger projects as required from the class with some free range 
-                    to pick what projects we wanted to work on. I opted to make a small ATM for my first project. This ATM had a way to make an account and password 
-                    and would require you to login in order to withdraw or deposit any hypothetical money. </p><br>
-                <p>
-                    Later on when I took the more experienced C# class or projects got larger and more complex. During that semester we got the opportunity to code 
-                    with "Finch" robots. These robots had many different sensors on them to monitor the world around them. Along with those they also had the ability 
-                    to make noise and move around form two small wheels. Our final project for the second C# class was to make a text based quest game. My game was based 
-                    around the Star Wars franchise where it prompted the player to enter their name, age, what race from star wars they would like to be called, and 
-                    what side of the force they would like to choose. The initial game would load where the player could move from planet to planet, interact with NPCs
-                    fight bad NPCs, and collect parts for a lightsaber along with some other items to aid them along their journey.
-                </p><br>
-            <h3>Java</h3>
-                <p>
-                    When I transferred colleges to Grand Valley State University the first classes I had to take were intro classes for the Java language. Because C# is 
-                    very similar to Java, this transition was pretty simple. In the more experienced Java class we were tasked to make a Tic Tac Toe game that would 
-                    prompt the player to enter what size of a board they wanted from 3x3 up to 15x15, and how many in a row they wanted to be a win. Once we got that 
-                    working we were tasked to create an opponent that would attempt to block you from getting a win. Overall a very fun project and the end product was 
-                    semi hard to beat the CPU which made it all worth while.
-                </p><br>
-            <h3>SQL</h3>
-                <p>
-                    SQL was something ive always thought was fun and had potential to be linked to most things. When I first took a SQL class at NMC we had a project to 
-                    create a database with multiple tables and made up data to query for projects. I thought it was fairly simple but also super cool. Later when I 
-                    transferred to GVSU I had to retake a database class at GV so I got to experience it again and in some parts in more detail. In this class we focused 
-                    more on writing the actual query to retrieve the data from databases. The summer of 2024 I had the ability to work at GE Aerospace in Muskegon where
-                    we us SQL as the main form of coding practice. I got a ton of real world experience with SQL and it allowed me to grow my knowledge of the language greatly.
-                </p>
-            <h3>HTML/CSS</h3>
-                <p>
-                    Ive taken one web development class that focused on HTML5 and CSS. Instantly my creativity took off with possibilities of what could be done. 
-                    Originally started with a very basic website but then later it evolved to playing around with whats possible an finally into me making this website. 
-                    The website was made off a template from a video that I later customized to personalize it and make it my own for a Computer graphics class to publish 
-                    my work and projects I had completed in that class. That was when I had the idea to later change it into the portfolio website you are reading now.
-                </p>
-            <h3>Python</h3>
-                <p>
-                    Python is a language that im not as familiar with as other languages. A year after I had learned Java at GVSU they had changed everything to Python 
-                    forcing us to learn python for classes. Ive never been officially taught Python but I taught it to myself to keep up with my classes. Some things Ive 
-                    done with python include programming search algorithms, creating a local server to communicate with a web-server
-                </p>
-            <h3>C</h3>
-                <p>
+            <p>
+                C# was my first exposure to coding. I took an Intro to C# class at Northwestern Michigan College in
+                Traverse City, where my professor, John Velis, made programming genuinely fun &mdash; fun enough that I
+                later made Computer Science my major. Pursuing this degree pushed me to pick up many other languages,
+                some obscure and some widely used. Below are a few of the better-known ones and how I've used them.
+            </p>
 
-                </p>
-            <h3>Javascript</h3>
-                <p>
+            <div class="lang-grid">
+                <div class="card-block">
+                    <h3>C#</h3>
+                    <p>
+                        C# was the first language I ever learned. As the projects grew, I built a small ATM app that
+                        let you create an account and password and required a login before withdrawing or depositing.
+                        In the advanced course we programmed "Finch" robots &mdash; wheeled bots packed with sensors
+                        that could move and make noise &mdash; and my final project was a text-based, Star Wars&ndash;themed
+                        quest game where players travel between planets, interact with and fight NPCs, and collect parts
+                        to build a lightsaber.
+                    </p>
+                </div>
+                <div class="card-block">
+                    <h3>Java</h3>
+                    <p>
+                        When I transferred to Grand Valley State University, my first courses were the intro Java
+                        sequence. Because C# and Java are so similar, the transition was smooth. In the advanced class
+                        I built a Tic-Tac-Toe game with a configurable board (3x3 up to 15x15) and a configurable
+                        win length, then added a CPU opponent that actively tried to block you. The finished AI was
+                        satisfyingly tough to beat.
+                    </p>
+                </div>
+                <div class="card-block">
+                    <h3>SQL</h3>
+                    <p>
+                        SQL has always felt fun to me and connects to almost everything. My first SQL class at NMC had
+                        us design a multi-table database and query made-up data. At GVSU I revisited databases in more
+                        depth, focusing on writing the queries that pull data out. Then, during my summer 2024
+                        internship at GE Aerospace, SQL was my primary tool &mdash; the real-world experience grew my
+                        knowledge of the language enormously.
+                    </p>
+                </div>
+                <div class="card-block">
+                    <h3>HTML / CSS</h3>
+                    <p>
+                        I've taken a web development class focused on HTML5 and CSS, and my creativity took off with all
+                        the possibilities. I started with a very basic page, kept experimenting, and eventually built
+                        this site. It began as a template I customized for a Computer Graphics class to publish my work,
+                        and that's when I had the idea to grow it into the portfolio you're reading now.
+                    </p>
+                </div>
+                <div class="card-block">
+                    <h3>Python</h3>
+                    <p>
+                        Python is a language I'm still growing into. A year after I learned Java at GVSU, the department
+                        switched its courses to Python, so I taught myself to keep pace. Along the way I've implemented
+                        search algorithms and built a local server that communicates with a web server.
+                    </p>
+                </div>
+                <div class="card-block">
+                    <h3>JavaScript</h3>
+                    <p>
+                        JavaScript powers the interactive pieces of this very site. Every WebGL project from my Computer
+                        Graphics class &mdash; the rotating triangles, the Sierpinski gasket, and the animation demos
+                        &mdash; was written in JavaScript, and the parallax scrolling on this page's landing section is
+                        driven by it too. It's the language that first showed me how code and visuals come together in
+                        the browser.
+                    </p>
+                </div>
+            </div>
 
-                </p>
-            <br><br>
-            <a href="CIS367-KyleFink/CIS367-KyleFink/Blender/blender.html"><button class="button" data-text="Awesome">
-                <span class="work" id="work">&nbsp;Blender&nbsp;</span>
-                <span aria-hidden="true" class="hover-text">&nbsp;Blender&nbsp;</span>
-            </button></a><br>
-            <a href="CIS367-KyleFink/projects.html"><button class="button" data-text="Awesome">
-                <span class="work" id="work">&nbsp;Projects&nbsp;</span>
-                <span aria-hidden="true" class="hover-text">&nbsp;Projects&nbsp;</span>
-            </button></a>
-        
+            <div class="cta-row">
+                <a href="CIS367-KyleFink/CIS367-KyleFink/Blender/blender.html"><button class="button" data-text="Blender">
+                    <span class="work">&nbsp;Blender&nbsp;</span>
+                    <span aria-hidden="true" class="hover-text">&nbsp;Blender&nbsp;</span>
+                </button></a>
+                <a href="CIS367-KyleFink/projects.html"><button class="button" data-text="Projects">
+                    <span class="work">&nbsp;Projects&nbsp;</span>
+                    <span aria-hidden="true" class="hover-text">&nbsp;Projects&nbsp;</span>
+                </button></a>
+            </div>
         </div>
 
+        <!-- Class Work links -->
+        <div class="sec reveal" id="work">
+            <h1>Class Work</h1>
+            <div class="work-grid">
+                <a href="CIS367-KyleFink/CIS367-KyleFink/Triangle/demo/Triangle.html"><button class="work_btn">Triangle</button></a>
+                <a href="CIS367-KyleFink/CIS367-KyleFink/Gasket/demo/gasket1.html"><button class="work_btn">Sierpinski Gasket</button></a>
+                <a href="CIS367-KyleFink/CIS367-KyleFink/Animation/demo/triangle-interact.html"><button class="work_btn">Animation/Automation</button></a>
+                <a href="CIS367-KyleFink/CIS367-KyleFink/More-Animation/demo/triangle-anim.html"><button class="work_btn">Triangle Movement</button></a>
+                <a href="CIS367-KyleFink/CIS367-KyleFink/Triangle-Rotate/demo/triangle-rotate.html"><button class="work_btn">Triangle Rotate</button></a>
+                <a href="CIS367-KyleFink/CIS367-KyleFink/Sierpinski-Click/demo/sierpinski-click.html"><button class="work_btn">Sierpinski Gasket 2</button></a>
+                <a href="CIS367-KyleFink/CIS367-KyleFink/HW3/index.html"><button class="work_btn">2D Scene</button></a>
+                <a href="CIS367-KyleFink/CIS367-KyleFink/PixiJS/PixiJSMovement.html"><button class="work_btn">PixiJS</button></a>
+            </div>
+        </div>
 
-        <!-- Links for class work -->
-        <div class="#temp" id="#temp">
-            <h2>Class Work</h2>
-            <a href="CIS367-KyleFink/CIS367-KyleFink/Triangle/demo/Triangle.html"><button type="work_btn">Triangle</button></a>
-            <a href="CIS367-KyleFink/CIS367-KyleFink/Gasket/demo/gasket1.html"><button type="work_btn">Sierpinski Gasket</button></a>
-            <a href="CIS367-KyleFink/CIS367-KyleFink/Animation/demo/triangle-interact.html"><button type="work_btn">Animation/Automation</button></a>
-            <a href="CIS367-KyleFink/CIS367-KyleFink/More-Animation/demo/triangle-anim.html"><button type="work_btn">Triangle Movement</button></a>
-	        <a href="CIS367-KyleFink/CIS367-KyleFink/Triangle-Rotate/demo/triangle-rotate.html"><button type="work_btn">Triangle Rotate</button></a>
-            <a href="CIS367-KyleFink/CIS367-KyleFink/Sierpinski-Click/demo/sierpinski-click.html"><button type="work_btn">Sierpinski Gasket 2</button></a>
-            <a href="CIS367-KyleFink/CIS367-KyleFink/HW3/index.html"><button type="work_btn">2D Scene</button></a>  
-            <a href="CIS367-KyleFink/CIS367-KyleFink/PixiJS/PixiJSMovement.html"><button type="work_btn">PixiJS</button></a>
+        <!-- Contact -->
+        <div class="sec reveal" id="contact">
+            <h1>Get In Touch</h1>
+            <p>
+                I'm always open to connecting about opportunities, projects, or just talking shop.
+                The quickest way to reach me is by email, and you can find more of my work through the links below.
+            </p>
+            <div class="contact-actions">
+                <a class="pill-btn primary" href="mailto:kylefink3@gmail.com">Email Me</a>
+                <a class="pill-btn secondary" href="Kyle-Fink-Resume.pdf" download>Download Resume</a>
+            </div>
+        </div>
 
-	</div>
-    <!-- link to js file -->
-    <script src="Website.js"></script>
+        <script src="Website.js"></script>
 
-
-    
-        <footer class="sec" id="sec" height="200px">
-          
+        <!-- Footer -->
+        <footer class="site-footer">
+            <ul class="example-2">
+                <li class="icon-content">
+                  <a href="https://www.linkedin.com/in/kyle-j-fink/" aria-label="LinkedIn" data-social="linkedin" target="_blank" rel="noopener">
+                    <div class="filled"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" fill="currentColor"></path>
+                    </svg>
+                  </a>
+                  <div class="tooltip">LinkedIn</div>
+                </li>
+                <li class="icon-content">
+                  <a href="https://github.com/BoxMcNugget" aria-label="GitHub" data-social="github" target="_blank" rel="noopener">
+                    <div class="filled"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" fill="currentColor"></path>
+                    </svg>
+                  </a>
+                  <div class="tooltip">GitHub</div>
+                </li>
+                <li class="icon-content">
+                  <a href="https://www.instagram.com/kyle_fink3/" aria-label="Instagram" data-social="instagram" target="_blank" rel="noopener">
+                    <div class="filled"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" fill="currentColor"></path>
+                    </svg>
+                  </a>
+                  <div class="tooltip">Instagram</div>
+                </li>
+                <li class="icon-content">
+                  <a href="mailto:kylefink3@gmail.com" aria-label="Email" data-social="email">
+                    <div class="filled"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" fill="currentColor"></path>
+                    </svg>
+                  </a>
+                  <div class="tooltip">Email</div>
+                </li>
+            </ul>
+            <p class="copyright">&copy; <span id="year">2026</span> Kyle Fink &middot; Built with HTML, CSS &amp; JavaScript</p>
+            <a class="back-to-top" href="#">&uarr; Back to top</a>
         </footer>
     </body>
 </html>

@@ -59,7 +59,7 @@ nav .menu{
   color: black;
 }
 .img{
-  background: url('img3.jpg')no-repeat;
+  background: linear-gradient(135deg, #2b1055, #7597de);
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -283,6 +283,33 @@ ul {
   .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
     background-color: #ff0000;
   }
+
+
+/* === Mobile / responsive tweaks === */
+@media (max-width: 768px) {
+    nav .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .center .title {
+        font-size: 36px;
+    }
+    .ani {
+        padding: 20px;
+    }
+    .room, .eif, .bowl-1, .bowl-2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .room video, .bowl-1 video, .bowl-2 video, .eif img {
+        width: 100%;
+        height: auto;
+    }
+    .room p, .eif p, .bowl-1 p, .bowl-2 p {
+        font-size: 1.4em;
+        padding: 20px;
+    }
+}
   
 
 

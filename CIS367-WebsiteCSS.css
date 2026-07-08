@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
 
+/* === Design tokens === */
+:root{
+    --bg-deep: #1c0522;
+    --bg-card: #250a2e;
+    --bg-grad-top: #2b1055;
+    --bg-grad-bottom: #7597de;
+    --accent: #a98eff;          /* brighter mediumpurple for text/links */
+    --accent-strong: mediumpurple;
+    --text: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.72);
+    --border-soft: rgba(255, 255, 255, 0.12);
+    --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --shadow-2: 0 18px 45px rgba(0, 0, 0, 0.45);
+    --radius: 16px;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -10,23 +26,26 @@
 body{
     min-height: 100vh;
     overflow-x: hidden;
-    background: linear-gradient(#2b1055, #7597de);
+    background: linear-gradient(var(--bg-grad-top), var(--bg-grad-bottom));
+    color: var(--text);
 }
+
+/* === Header / nav === */
 header{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;    
-    padding: 8px 100px;
+    height: auto;
+    padding: 10px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 10000;
-    background-color: #1c0522;
-    border:mediumpurple;
-    border-style:ridge;
-    opacity: 95%;
+    background-color: rgba(28, 5, 34, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-soft);
 }
 header .logo{
     color: #fff;
@@ -44,19 +63,22 @@ header ul{
 header ul li{
     list-style: none;
     margin-left: 20px;
-
 }
 header ul li a{
     text-decoration: none;
     padding: 6px 15px;
     color: #fff;
     border-radius: 20px;
+    transition: background 0.25s ease, color 0.25s ease;
 }
 header ul li a:hover,
-header ul li a:active{
+header ul li a:active,
+header ul li a.active{
     background: #fff;
     color: #2b1055;
 }
+
+/* === Landing / parallax section (mechanics intentionally unchanged) === */
 section{
     position: relative;
     width: 100%;
@@ -75,7 +97,6 @@ section::before{
     height: 100px;
     background: linear-gradient(to top, #1c0522, transparent);
     z-index: 1000;
-
 }
 section img{
     position: absolute;
@@ -92,7 +113,6 @@ section img#sun{
     align-content: center;
     width: fit-content;
     transform: translateX(500px) translateY(200px);
-
 }
 section img#mountains_front{
     z-index: 10;
@@ -104,99 +124,333 @@ section img#mountains_front{
     font-size: 7.5vw;
     z-index: 9;
     padding-bottom: 400px;
+    text-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
 }
 #btn{
     text-decoration: none;
     display: inline-block;
-    padding: 8px 30px;
+    padding: 10px 34px;
     border-radius: 40px;
     background: #fff;
     color: #2b1055;
     font-size: 1.5em;
+    font-weight: 600;
     z-index: 9;
     transform: translateY(100px);
+    box-shadow: var(--shadow-1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-#work_btn{
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 30px;
-    border-radius: 40px;
+#btn:hover{
+    box-shadow: 0 12px 30px rgba(169, 142, 255, 0.5);
+}
+
+/* Shooting stars streaking across the hero sky */
+.shooting-stars{
+    position: absolute;
+    inset: 0;
+    z-index: 5;              /* above sky layers, behind front mountains (z-index 10) */
+    pointer-events: none;
+    overflow: hidden;
+}
+.shooting-star{
+    position: absolute;
+    height: 2px;
+    width: 130px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), #ffffff);
+    border-radius: 999px;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+    opacity: 0;
+    transform: translate(0, 0) rotate(45deg);
+    animation: shoot 7s linear infinite;
+}
+.shooting-star:nth-child(1){ top: 8%;  left: 55%; animation-delay: 1s;   animation-duration: 6.5s; }
+.shooting-star:nth-child(2){ top: 2%;  left: 78%; animation-delay: 4.5s; animation-duration: 8s; }
+.shooting-star:nth-child(3){ top: 18%; left: 68%; animation-delay: 8s;   animation-duration: 7.5s; }
+@keyframes shoot{
+    0%   { transform: translate(0, 0) rotate(45deg);          opacity: 0; }
+    6%   { opacity: 1; }
+    28%  { opacity: 1; }
+    45%  { transform: translate(-420px, 420px) rotate(45deg); opacity: 0; }
+    100% { transform: translate(-420px, 420px) rotate(45deg); opacity: 0; }
+}
+
+/* scroll cue under the hero button */
+.scroll-cue{
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    width: 26px;
+    height: 42px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 14px;
+}
+.scroll-cue::before{
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    border-radius: 2px;
     background: #fff;
-    color: #2b1055;
-    font-size: 1.5em;
+    animation: scrollDot 1.6s ease-in-out infinite;
 }
+@keyframes scrollDot{
+    0%   { opacity: 0; transform: translate(-50%, 0); }
+    40%  { opacity: 1; }
+    80%  { opacity: 0; transform: translate(-50%, 14px); }
+    100% { opacity: 0; }
+}
+
+/* === Content sections === */
 .sec{
     position: relative;
-    padding: 50px;
-    background: #1c0522;
+    padding: 90px 50px;
+    background: var(--bg-deep);
     contain: content;
 }
+.sec > *{
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Twinkling starfield behind each dark section (two layers for depth) */
+.sec::before,
+.sec::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.sec::before{
+    background-image: radial-gradient(1.2px 1.2px at 30px 40px, rgba(255, 255, 255, 0.85) 50%, transparent 51%);
+    background-size: 160px 160px;
+    opacity: 0.5;
+    animation: twinkleA 5s ease-in-out infinite;
+}
+.sec::after{
+    background-image: radial-gradient(1px 1px at 90px 110px, rgba(255, 255, 255, 0.7) 50%, transparent 51%);
+    background-size: 230px 230px;
+    opacity: 0.35;
+    animation: twinkleB 7.5s ease-in-out infinite;
+}
+@keyframes twinkleA{
+    0%, 100% { opacity: 0.25; }
+    50%      { opacity: 0.65; }
+}
+@keyframes twinkleB{
+    0%, 100% { opacity: 0.2; }
+    50%      { opacity: 0.5; }
+}
 .sec h1{
-    font-size: 6em;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     text-align: center;
-    align-items: center;
-    align-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     color: #fff;
+    letter-spacing: 1px;
+}
+.sec h1::after{
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    margin: 18px auto 0;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-strong));
 }
 .sec h2{
-    font-size: 3em;
-    margin-bottom: 10px;
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    margin-bottom: 14px;
     color: #fff;
 }
 .sec h3{
-    font-size: 2em;
+    font-size: clamp(1.3rem, 2.4vw, 1.8rem);
     margin-bottom: 10px;
-    color: #fff;
+    color: var(--accent);
 }
 .sec p{
-    font-size: 1.2em;
-    color: #fff;
+    font-size: 1.12em;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 16px;
 }
 .sec p img{
     float: left;
-    padding-right: 50px;
+    padding-right: 40px;
+    padding-bottom: 16px;
 }
-.work{
-    position: relative;
-    text-align: center;
+
+/* Portrait styling in the About section */
+#Portrait{
+    border-radius: 14px;
+    border: 3px solid var(--border-soft);
+    box-shadow: var(--shadow-1);
+}
+
+/* Reusable card for experience / coding blocks */
+.card-block{
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.card-block:hover{
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-2);
+    border-color: rgba(169, 142, 255, 0.4);
+}
+.card-block h3{
+    margin-bottom: 6px;
+}
+.card-block .meta{
+    display: block;
+    font-size: 0.95em;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    letter-spacing: 0.4px;
+}
+.card-block p:last-child{
+    margin-bottom: 0;
+}
+
+/* Grid for the coding-language cards */
+.lang-grid{
     display: grid;
-    background: #1c0522;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    max-width: 900px;
+    margin: 0 auto 30px;
 }
-.work a{
-    position: relative;
-    background: #1c0522;
+.lang-grid .card-block{
+    margin-bottom: 0;
+}
+
+/* Button row (Blender / Projects) */
+.cta-row{
     display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
-.work h2{
-    font-size: 3.5em;
-    margin-bottom: 10px;
+
+/* === Class Work buttons === */
+.work_btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 26px;
+    margin: 8px;
+    border: 1px solid var(--border-soft);
+    border-radius: 40px;
+    background: rgba(117, 151, 222, 0.15);
     color: #fff;
-}
-.work button{
-    width: 25%;
-    border: 2px solid black;
-    border-radius: 20px;
-    background-color: #7597de;
-    padding: 14px;
-    font-size: 16px;
+    font-size: 1.05em;
     cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+.work_btn:hover{
+    transform: translateY(-3px);
+    background: var(--bg-grad-bottom);
+    box-shadow: var(--shadow-1);
+}
+.work-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* === Contact section === */
+#contact{
     text-align: center;
-    transition: all .2s ease-in-out;
 }
-.work button:hover{
-    transform: scale(1.1);
+#contact p{
+    max-width: 640px;
+    text-align: center;
+}
+.contact-actions{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin: 30px auto 10px;
+}
+.pill-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    border-radius: 40px;
+    font-size: 1.05em;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.pill-btn.primary{
+    background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+    color: #1c0522;
+    border: none;
+}
+.pill-btn.secondary{
+    background: transparent;
+    color: #fff;
+    border: 2px solid var(--accent);
+}
+.pill-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-1);
 }
 
+/* === Footer === */
+footer.site-footer{
+    background: #14041a;
+    padding: 40px 20px 30px;
+    text-align: center;
+    border-top: 1px solid var(--border-soft);
+}
+footer.site-footer .example-2{
+    margin-bottom: 18px;
+}
+footer.site-footer .copyright{
+    color: var(--text-muted);
+    font-size: 0.95em;
+}
+.back-to-top{
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.95em;
+}
+.back-to-top:hover{ text-decoration: underline; }
 
+/* === Scroll reveal === */
+.reveal{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+}
+.reveal.visible{
+    opacity: 1;
+    transform: none;
+}
 
-
-
-
-
-/* === removing default button style ===*/
+/* === "Awesome" outline buttons (Blender / Projects) === */
 .button {
     margin: 0;
     height: auto;
@@ -204,14 +458,10 @@ section img#mountains_front{
     padding: 0;
     border: none;
     cursor: pointer;
-  }
-  
-  /* button styling */
-  .button {
     --border-right: 6px;
     --text-stroke-color: rgba(255,255,255,0.6);
-    --animation-color: mediumpurple;
-    --fs-size: 5em;
+    --animation-color: var(--accent);
+    --fs-size: 4em;
     letter-spacing: 3px;
     text-decoration: none;
     font-size: var(--fs-size);
@@ -220,10 +470,8 @@ section img#mountains_front{
     text-transform: uppercase;
     color: transparent;
     -webkit-text-stroke: 1px var(--text-stroke-color);
-  }
-
-  /* this is the text, when you hover on button */
-  .hover-text {
+}
+.hover-text {
     position: absolute;
     box-sizing: border-box;
     content: attr(data-text);
@@ -234,43 +482,26 @@ section img#mountains_front{
     overflow: hidden;
     transition: 0.5s;
     -webkit-text-stroke: 1px var(--animation-color);
-  }
-
-  /* hover */
-  .button:hover .hover-text {
+}
+.button:hover .hover-text {
     width: 100%;
     filter: drop-shadow(0 0 23px var(--animation-color))
-  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*CSS for the Linkedin github and other buttons on bottom*/
-
+/* === Social icon buttons === */
 ul {
     list-style: none;
-  }
-  
-  .example-2 {
+}
+.example-2 {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .example-2 .icon-content {
+}
+.example-2 .icon-content {
     margin: 0 10px;
     position: relative;
-  }
-  .example-2 .icon-content .tooltip {
+}
+.example-2 .icon-content .tooltip {
     position: absolute;
     top: -30px;
     left: 50%;
@@ -282,13 +513,13 @@ ul {
     visibility: hidden;
     font-size: 14px;
     transition: all 0.3s ease;
-  }
-  .example-2 .icon-content:hover .tooltip {
+}
+.example-2 .icon-content:hover .tooltip {
     opacity: 1;
     visibility: visible;
     top: +60px;
-  }
-  .example-2 .icon-content a {
+}
+.example-2 .icon-content a {
     position: relative;
     overflow: hidden;
     display: flex;
@@ -300,20 +531,20 @@ ul {
     color: #4d4d4d;
     background-color: #fff;
     transition: all 0.3s ease-in-out;
-  }
-  .example-2 .icon-content a:hover {
+}
+.example-2 .icon-content a:hover {
     box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
-  }
-  .example-2 .icon-content a svg {
+}
+.example-2 .icon-content a svg {
     position: relative;
     z-index: 1;
     width: 30px;
     height: 30px;
-  }
-  .example-2 .icon-content a:hover {
+}
+.example-2 .icon-content a:hover {
     color: white;
-  }
-  .example-2 .icon-content a .filled {
+}
+.example-2 .icon-content a .filled {
     position: absolute;
     top: auto;
     bottom: 0;
@@ -322,22 +553,20 @@ ul {
     height: 0;
     background-color: #000;
     transition: all 0.3s ease-in-out;
-  }
-  .example-2 .icon-content a:hover .filled {
+}
+.example-2 .icon-content a:hover .filled {
     height: 100%;
-  }
-  
-  .example-2 .icon-content a[data-social="linkedin"] .filled,
-  .example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+}
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
     background-color: #0274b3;
-  }
-  
-  .example-2 .icon-content a[data-social="github"] .filled,
-  .example-2 .icon-content a[data-social="github"] ~ .tooltip {
+}
+.example-2 .icon-content a[data-social="github"] .filled,
+.example-2 .icon-content a[data-social="github"] ~ .tooltip {
     background-color: #24262a;
-  }
-  .example-2 .icon-content a[data-social="instagram"] .filled,
-  .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
     background: linear-gradient(
       45deg,
       #405de6,
@@ -347,15 +576,52 @@ ul {
       #e1306c,
       #fd1f1f
     );
-  }
-  .example-2 .icon-content a[data-social="youtube"] .filled,
-  .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
-    background-color: #ff0000;
-  }
-  
+}
+.example-2 .icon-content a[data-social="email"] .filled,
+.example-2 .icon-content a[data-social="email"] ~ .tooltip {
+    background-color: #7597de;
+}
 
+/* === Mobile / responsive tweaks ===
+   Note: the landing-section parallax (section, section img, #text, #btn)
+   is intentionally left untouched so the background behaves exactly as before. */
+@media (max-width: 768px) {
+    header {
+        padding: 8px 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    header ul li {
+        margin-left: 10px;
+    }
+    .sec {
+        padding: 60px 20px;
+    }
+    .sec p img {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+        padding-right: 0;
+    }
+    .button {
+        --fs-size: 2.6em;
+    }
+    .cta-row{
+        gap: 16px;
+    }
+}
 
-
-
-
-
+/* === Respect reduced-motion preferences === */
+@media (prefers-reduced-motion: reduce) {
+    *{ scroll-behavior: auto; }
+    .reveal{
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .scroll-cue::before{ animation: none; }
+    .sec::before,
+    .sec::after{ animation: none; }
+    .shooting-star{ display: none; }
+}

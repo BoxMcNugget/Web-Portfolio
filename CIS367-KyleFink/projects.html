@@ -1,12 +1,16 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects | Kyle Fink</title>
         <link rel="stylesheet" href="projects.css">
     </head>
     <body>
 
 
         <!--START SIDE NAV BAR-->
-        <div class="area"></div><nav class="main-menu">
+        <nav class="main-menu">
             <ul>
                 <li>
                     <a href="CIS367-KyleFink/Triangle/demo/Triangle.html">
@@ -15,7 +19,7 @@
                         Making a Triangle
                         </span>
                     </a>
-                
+
                 </li>
                 <li class="has-subnav">
                     <a href="CIS367-KyleFink/Triangle-Rotate/demo/triangle-rotate.html">
@@ -48,7 +52,7 @@
                             Sierpinski Gasket
                         </span>
                     </a>
-                    
+
                 </li>
                 <li class="has-subnav">
                     <a href="CIS367-KyleFink/Sierpinski-Click/demo/sierpinski-click.html">
@@ -57,7 +61,7 @@
                             Sierpinski Gasket Click
                         </span>
                     </a>
-                
+
                 </li>
                 <li>
                 <a href="CIS367-KyleFink/HW3/index.html">
@@ -79,22 +83,68 @@
 
             <ul class="logout">
                 <li>
-                <a href="https://boxmcnugget.github.io/Web-Portfolio/">
+                <a href="../index.html">
                         <i class="fa fa-home fa-3x"></i>
                         <span class="nav-text">
-                            Back to Home 
+                            Back to Home
                         </span>
                     </a>
-                </li>  
+                </li>
             </ul>
         </nav>
         <!--END SIDE NAV BAR-->
 
-        <div class="grid-container">
-            <div class="item1">1</div>
-            <div class="item2">2</div>
-            <div class="item3">3</div>
-          </div> 
+        <main class="content">
+            <header class="content-header">
+                <h1>Projects</h1>
+                <p>
+                    Interactive computer-graphics projects built with WebGL and JavaScript
+                    for my Computer Graphics coursework at GVSU. Click any card to open the live demo.
+                </p>
+            </header>
+
+            <section class="card-grid">
+                <a class="card" href="CIS367-KyleFink/Triangle/demo/Triangle.html">
+                    <i class="fa fa-exclamation-triangle fa-2x"></i>
+                    <h2>Making a Triangle</h2>
+                    <p>My first WebGL program &mdash; drawing a single triangle to the canvas.</p>
+                </a>
+                <a class="card" href="CIS367-KyleFink/Triangle-Rotate/demo/triangle-rotate.html">
+                    <i class="fa fa-exclamation-triangle fa-2x"></i>
+                    <h2>Triangle Rotate</h2>
+                    <p>Rotating a triangle using transformation matrices.</p>
+                </a>
+                <a class="card" href="CIS367-KyleFink/Animation/demo/triangle-interact.html">
+                    <i class="fa fa-arrows fa-2x"></i>
+                    <h2>Triangle Animate A</h2>
+                    <p>An interactive, animated triangle you can control.</p>
+                </a>
+                <a class="card" href="CIS367-KyleFink/More-Animation/demo/triangle-anim.html">
+                    <i class="fa fa-arrows fa-2x"></i>
+                    <h2>Triangle Animate B</h2>
+                    <p>A second take on animating triangle movement.</p>
+                </a>
+                <a class="card" href="CIS367-KyleFink/Gasket/demo/gasket1.html">
+                    <i class="fa fa-sitemap fa-2x"></i>
+                    <h2>Sierpinski Gasket</h2>
+                    <p>Generating the classic recursive Sierpinski fractal.</p>
+                </a>
+                <a class="card" href="CIS367-KyleFink/Sierpinski-Click/demo/sierpinski-click.html">
+                    <i class="fa fa-sitemap fa-2x"></i>
+                    <h2>Sierpinski Gasket Click</h2>
+                    <p>An interactive version of the gasket driven by mouse clicks.</p>
+                </a>
+                <a class="card" href="CIS367-KyleFink/HW3/index.html">
+                    <i class="fa fa-gamepad fa-2x"></i>
+                    <h2>2D Scene</h2>
+                    <p>A textured 2D scene built with WebGL.</p>
+                </a>
+                <a class="card" href="CIS367-KyleFink/PixiJS/PixiJSMovement.html">
+                    <i class="fa fa-map-marker fa-2x"></i>
+                    <h2>PixiJS</h2>
+                    <p>Sprite movement and interaction using the PixiJS library.</p>
+                </a>
+            </section>
+        </main>
     </body>
 </html>
-
